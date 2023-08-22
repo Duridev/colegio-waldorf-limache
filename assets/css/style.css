@@ -1,0 +1,406 @@
+/* GLOBALES */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+*, *:Before, *:after {
+    box-sizing: inherit;
+}
+
+/* FUENTES */
+
+@font-face {
+    font-family: 'antropos-bw2g';
+    src: url("../fonts/AntroposFreefont-BW2G.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'baarphilos-mvjn';
+    src: url("../fonts/BaarPhilos-MVjn.woff") format('woff');
+}
+
+
+
+body {
+    background-image: url(../image/background/background-02.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position:static ;
+    background-size:cover;
+    font-size: 2rem;
+    font-family: 'baarphilos-mvjn';
+}
+
+header {
+    width: 95%;
+    margin: 1rem auto;
+    background-color:rgba(184, 135, 11, 0.116);
+    box-shadow:  3px 3px 10px 0px rgba(0, 0, 0, 0.204);
+}
+
+.menu-navegacion {
+    display: flex;
+    justify-content: space-evenly;   
+    font-size: 2.5rem;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 0; 
+}
+
+#menu-colapsado {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: inherit;
+    align-items: center;
+}
+
+.contenedor-titulo {
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto 2rem auto;
+    max-width: 100%;
+    text-align: center;
+
+
+}
+
+.contenedor-titulo img {
+    object-fit: contain;
+    width: 13rem;
+    height: 13rem;
+}
+
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'antropos-bw2g';
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.titulo h2 {
+    font-size: 2.5rem;
+}
+
+.subtitulo {
+    font-size: 2.5rem;
+}
+
+h2,
+h3 {
+    text-align: center;
+    font-family: 'antropos-bw2g';
+    font-size: 3.3rem;
+}
+
+.navbar-nav a {
+    margin: 0rem 1.5rem 1.5rem 1.5rem;
+}
+
+.nav-link {
+    padding-left: 2rem;
+}
+
+/* EFECTO HOVER NAVBAR */
+
+/* Estilos para la pincelada */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3.5rem;
+    background-image: url(../image/brush-3.png);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition: 0.25s ease-out;
+    z-index: -1;
+    background-position-y: top;
+}
+
+  /* Transición de la pincelada al hacer hover */
+.nav-link:hover::before {
+    width: 12rem;
+    transform: translateX(-6px);
+
+}
+
+
+/* ¿Qué es la Pedagogia Waldorf? // Escencia */
+
+.contenedor-que-es {
+    display: grid;
+    grid-template-columns: 2fr 3fr; /* Usar 1 fr para la imagen y 2 fr para el texto */
+    gap: 2rem; /* Espacio entre las columnas */
+    align-items: center; /* Alinear verticalmente en el centro */
+    margin: 10rem auto 7rem auto;
+    max-width: 70%;
+}
+
+.image-01 {
+    height: 25rem;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 2rem;
+    
+}
+
+/*  LABOR // POEMA */
+
+.nina-luna {
+    width: 15rem;
+}
+
+.article-poema {
+    display: flex;
+    margin: 10rem 5rem 10rem 5rem;
+
+}
+
+.article-poema img {
+    object-fit: contain;
+    border-radius: 2rem;
+    margin: 2rem auto auto 2.5rem
+}
+
+.article-texto {
+    width: 55%;
+}
+
+
+
+.poema-intro {
+    display: inline;
+    margin: auto;
+    padding: 1rem 2rem 2rem 2rem;
+    text-align: center;
+    font-size: 1.7rem;
+    background-color: rgba(218, 165, 32, 0.325);
+    box-shadow:  3px 3px 10px 0px rgba(0, 0, 0, 0.204);
+    border-radius: 1rem;
+    min-width: 40%;
+
+}
+
+
+/* GRADOS */
+
+.contenedor-grados {
+    margin-top: 11rem;
+}
+
+.grados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 50%;
+    margin: 5rem auto 0 auto;
+    align-content: center;
+    justify-items: center;
+}
+
+.grado {
+    height: 30rem;
+    width: 20rem;
+    border-radius: 5rem;
+    margin-top: 4rem;
+
+    overflow: hidden; /* Para recortar el contenido que desborda */
+    position: relative; /* Para posicionar correctamente el contenido y la imagen de fondo */
+    cursor: pointer;
+}
+
+/* Agrega la imagen de fondo y ajusta las propiedades */
+.grado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el fondo */
+    background-position: center center;
+    transition: transform 0.5s ease; /* Transición suave para el efecto hover */
+}
+
+/* Aplica el efecto de hover para acercar la imagen */
+.grado:hover::before {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen en un 10% */
+    
+}
+
+.pre-kinder::before {
+    background-image: url(../image/RVP_0886_w.webp);
+}
+
+.kinder::before {
+    background-image: url(../image/bvvxqcoh1qivmgecbsd8.webp);
+}
+
+.basica::before {
+    background-image: url(../image/MS+Flutes.jpg);
+}
+
+h4{
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'antropos-bw2g';
+    font-size: 3rem;
+    color: #fafafa;
+    filter: drop-shadow(1px 1px 4px black);
+}
+
+.pre-kinder {
+    background-image: url(../image/RVP_0886_w.webp);
+    background-position: center;
+    
+}
+
+.kinder {
+    background-image: url(../image/bvvxqcoh1qivmgecbsd8.webp);
+    background-position: center;
+}
+
+.basica {
+    background-image: url(../image/MS+Flutes.jpg);
+    background-position: center
+    ;
+}
+
+
+/*  GALERIA  */
+
+.contenedor-galeria {
+    margin-top: 10rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: 75%;
+    margin: 5rem auto 7rem auto;
+    background-color: #fafafa92;
+    padding: 1rem;
+}
+
+.area {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.area:hover {
+    transform: scale(1.1);
+}
+
+.area img{
+    border-radius: 0.5rem;
+    object-fit: cover;
+    width: 100%;
+    height:20rem;
+}
+
+.area1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.area2 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+}
+.area3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.area4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.area5 {  
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.area6 {  
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.area6 img {
+    height: 100%;
+}
+.area7 {  
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
+
+
+
+
+
+/* FOOTER */
+
+footer {
+    height: 35rem;
+    background-color: darkgoldenrod;
+    bottom: 0;
+    margin-top: 10rem;
+}
+
+.contenedor-footer {
+    display: flex;
+    justify-content:space-around;
+}
+
+.mapa {
+    align-items: center;
+}
+
+footer h3 {
+    color:#fafafa;
+    filter: drop-shadow(1px 1px 4px rgb(100, 100, 100));
+    margin-top: 1rem;
+}
+
+footer h4 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.img-map {
+    height: 20rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.contacto div {
+    display: flex;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.contacto img {
+    width: 3rem;
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 3px black);
+    margin-right: 1rem;
+}
+
+#copyright {
+    text-align:center ;
+    color: #fafafa;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
